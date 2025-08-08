@@ -2,9 +2,47 @@
 title: "Quarto Customization Practice"
 author: "Henry Oliver"
 format: html
+execute: 
+  warning: false
 ---
 
+Suppressing warning and messages JUST for this code chunk
+
 ```{r}
+#| warning: false
+#| message: false
 library(tidyverse)
+
+```
+
+Running code but not showing code OR output
+```{r}
+#| include: false
+# return first 6 lines of starwars data
+head(starwars)
+
+#return dimensions of starwars table
+dim(starwars)
+```
+
+Showing output, but not code.
+```{r}
+#| warning: false
+#| echo: false
+
+ggplot(data = starwars, aes(x = height, y = mass, color = mass)) + 
+  geom_point() +
+  labs (x = "Height in cm", y = "Mass in Kg")
+
+
+```
+
+Show only code and output
+```{r}
+#| warning: false
+ggplot(data = starwars, aes(x = height)) +
+  geom_histogram(color = "purple", fill = "gold")
+
+
 ```
 
