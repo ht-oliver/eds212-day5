@@ -1,0 +1,10 @@
+---
+title: "Quarto Customization Practice"
+author: "Henry Oliver"
+format: html
+---
+
+```{r}
+library(tidyverse)
+```
+
